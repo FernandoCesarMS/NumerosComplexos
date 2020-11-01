@@ -20,7 +20,10 @@ class Complexo {
 
   // Retorna a parte imaginária do número complexo corrente.
   double imag() const;
-
+  
+  double raio() const;
+  
+  double angulo() const;
   // Testa se o número complexo corrente é igual a 'x'.
   bool operator==(Complexo x) const;
 
@@ -50,14 +53,16 @@ class Complexo {
 
   // Divide o número complexo corrente por 'y' e retorna o resultado.
   Complexo operator/(Complexo y) const;
-
+  
+  void calculaPolar(double,double);
  private:
   // Parte real;
   double real_;
 
   // Parte imaginária.
   double imag_;
-
+  double r;
+  double teta;
   friend class Teste;
 };
 

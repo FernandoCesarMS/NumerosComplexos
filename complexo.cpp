@@ -4,19 +4,26 @@
 
 #include <cmath>
 
+void Complexo::calculaPolar(double a, double b){
+  r = modulo();
+  teta = atan2(b,a);  
+}
 Complexo::Complexo() {
   real_ = 0.0;
   imag_ = 0.0;
+  calculaPolar(real_,imag_);
 }
 
 Complexo::Complexo(double a) {
   real_ = a;
   imag_ = 0.0;
+calculaPolar(real_,imag_);
 }
 
 Complexo::Complexo(double a, double b) {
   real_ = a;
   imag_ = b;
+  calculaPolar(real_,imag_);
 }
 
 double Complexo::real() const {
@@ -26,9 +33,15 @@ double Complexo::real() const {
 double Complexo::imag() const {
   return imag_;
 }
+double Complexo::raio() const {
+    return r;
+}
+double Complexo::angulo() const {
+    return teta;
+}
 
 bool Complexo::operator==(Complexo x) const {
-  return real_ == x.real_ && imag_ == x.imag_;
+  return r == x.r && teta == x.teta;
 }
 
 void Complexo::operator=(Complexo x) {
