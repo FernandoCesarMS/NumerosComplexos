@@ -10,9 +10,9 @@
 
 std::ostream& operator<< (std::ostream& os, const Complexo& c) {
   if (c.imag() >= 0.0) {
-    os << c.raio() << " + " << c.angulo() << "i";
+    os << c.real() << " + " << c.imag() << "i";
   } else {
-    os << c.raio() << " - " << -c.angulo() << "i";
+    os << c.real() << " - " << -c.imag() << "i";
   }
   return os;
 }
